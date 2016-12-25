@@ -1,0 +1,27 @@
+{
+  "name": "relative-filepath-from-module",
+  "version": "0.0.1",
+  "description": "takes and full path to a file and remove all directories before the module. SO you get back a path relative to the module",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "ava",
+    "build": "babel src/index.js --out-file lib/index.js"
+  },
+  "keywords": [
+    "filepath",
+    "module",
+    "directory"
+  ],
+  "author": "Sindre Øye Svendby",
+  "license": "ISC",
+  "devDependencies": {
+    "ava": "^0.17.0",
+    "babel-cli": "^6.18.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0"
+  },
+  "ava": {
+  "require": ["babel-register"],
+  "babel": "inherit"
+  }
+}
