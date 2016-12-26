@@ -1,17 +1,17 @@
 
 #relative-filepath-from-module
+
 _Returns a filepath relative to the module you are in._
 
 ## Usage
 
 
 ```js
-// file: /home/username/git/personal/relative-filepath-from-module/test/yet-another-dir/index.js
-
+// file: /home/username/git/personal/relative-filepath-from-module/test/yet-another-dir/
 import modulePathFromFile from 'relative-filepath-from-module'
 const modulePath = modulePathFromFile(__dirname)
 
-console.log(modulePath) // ./relative-filepath-from-module/test/yet-another-dir
+console.log(modulePath) // relative-filepath-from-module/test/yet-another-dir/
 ```
 
 ```js
@@ -20,5 +20,17 @@ console.log(modulePath) // ./relative-filepath-from-module/test/yet-another-dir
 import modulePathFromFile from 'relative-filepath-from-module'
 const modulePath = modulePathFromFile(__dirname)
 
-console.log(modulePath) // ./relative-filepath-from-module/test/yet-another-dir/testFile
+console.log(modulePath) // relative-filepath-from-module/test/yet-another-dir/testFile.js
 ```
+
+
+```js
+// file: /home/username/git/personal/relative-filepath-from-module/test/yet-another-dir
+
+import modulePathFromFile from 'relative-filepath-from-module'
+const modulePath = modulePathFromFile(__dirname)
+
+console.log(modulePath) // relative-filepath-from-module/test/yet-another-dir
+```
+
+Should also work on windows, but have not tested. feedback is welcomed.

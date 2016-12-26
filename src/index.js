@@ -6,14 +6,14 @@ export default function resolvePath(path) {
     try {
 
       const directory = pathModule.parse(pathModule.normalize(path))
-      let fullpath = directory.dir
+      let directoryPath = directory.dir
       if(!directory.ext) {
-        fullpath += pathModule.sep + directory.base
+        directoryPath += pathModule.sep + directory.base
       }
-      const pathToModuleP = findModuleDirectory(fullpath)
+      const pathToModuleP = findModuleDirectory(directoryPath)
       pathToModuleP
         .then(pathToModule => moduleName(pathToModule))
-        .then(getModulePath.bind(null, fullpath))
+        .then(getModulePath.bind(null, path))
         .then(resolve)
         .catch(reject)
     } catch(err) {
@@ -43,7 +43,11 @@ function findModuleDirectory(directory) {
 }
 
 function getModulePath(fullpath, moduleName){
-  return './' + fullpath.substr(fullpath.lastIndexOf(moduleName));
+  return pathModule.normalize(
+          fullpath.substr(
+            fullpath.lastIndexOf(moduleName)
+          )
+        )
 }
 
 function moduleName(modulePath) {
