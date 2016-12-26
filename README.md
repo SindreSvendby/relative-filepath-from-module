@@ -33,4 +33,9 @@ const modulePath = modulePathFromFile(__dirname)
 console.log(modulePath) // relative-filepath-from-module/test/yet-another-dir
 ```
 
+
 Should also work on windows, but have not tested. feedback is welcomed.
+
+
+### See also
+* [module-name-from-path](https://github.com/watson/module-name-from-path)
