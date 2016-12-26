@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "takes and full path to a file and remove all directories before the module. SO you get back a path relative to the module",
   "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/sindresvendby/relative-filepath-from-module"
+  },
   "scripts": {
     "test": "ava",
     "build": "babel src/index.js --out-file lib/index.js"

@@ -1,0 +1,6 @@
+./src
+./test
+
+# is it best practise on npm to remove non dist files?
+# Do not think it is, but I do it here at least,
+# you can always checkout github to get the source
